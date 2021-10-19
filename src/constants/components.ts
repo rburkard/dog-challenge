@@ -5,5 +5,7 @@ import { colors } from '../constants/colors'
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  padding: 0px 16px;
+  padding: 64px;
+  flex-direction: column;
+  align-items: center;
 `
