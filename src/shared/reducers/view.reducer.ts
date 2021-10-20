@@ -1,12 +1,15 @@
-import * as ApiActions from '../actions/api.actions'
 import { ViewActionType } from '../actions/view.actions'
 
 export type ViewState = {
-  teamId: undefined | string
+  breeds: undefined | Array<string>
+  p1dog: undefined | string
+  p2dog: undefined | string
 }
 
 const initialDataState: ViewState = {
-  teamId: undefined,
+  breeds: undefined,
+  p1dog: undefined,
+  p2dog: undefined,
 }
 
 type Action = any
@@ -16,11 +19,23 @@ export const viewReducer = (
   action: Action,
 ): ViewState => {
   switch (action.type) {
-    // case ViewActionType.SetTeam:
-    //   return {
-    //     ...state,
-    //     teamId: action.payload,
-    //   }
+    case ViewActionType.SetBreeds:
+      return {
+        ...state,
+        breeds: action.payload,
+      }
+
+    case ViewActionType.SetP1Dog:
+      return {
+        ...state,
+        p1dog: action.payload,
+      }
+
+    case ViewActionType.SetP2Dog:
+      return {
+        ...state,
+        p2dog: action.payload,
+      }
     // case ApiActions.signUp.types.success:
     //   return {
     //     ...state,
